@@ -1,0 +1,22 @@
+{
+    "name": "Rbac",
+    "alias": "rbac",
+    "description": "",
+    "keywords": [
+        "framework",
+        "laravel",
+        "boilerplate",
+        "rbac"
+    ],
+    "priority": 0,
+    "providers": [
+        "Modules\\Rbac\\Providers\\RbacServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "minimumCoreVersion": "",
+    "title": "Rbac",
+    "version":"0.0.1",
+    "author": "Hafijul Islam"
+}
