@@ -29,7 +29,7 @@ class CreatePermissionTables extends Migration
             $table->string('name');       // For MySQL 8.0 use string('name', 125);
             $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
             $table->string('remarks')->nullable();
-            $table->enum('enabled', array_keys(Constant::ENABLED_OPTIONS))->default(DefaultValue::ENABLED_OPTION)->nullable();
+            $table->enum('enabled', array_keys(Constant::ENABLED_OPTIONS))->default(Constant::ENABLED_OPTION)->nullable();
             $table->foreignId('created_by')->index()->nullable();
             $table->foreignId('updated_by')->index()->nullable();
             $table->foreignId('deleted_by')->index()->nullable();
@@ -44,7 +44,7 @@ class CreatePermissionTables extends Migration
             $table->string('name');       // For MySQL 8.0 use string('name', 125);
             $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
             $table->string('remarks')->nullable();
-            $table->enum('enabled', array_keys(Constant::ENABLED_OPTIONS))->default(DefaultValue::ENABLED_OPTION)->nullable();
+            $table->enum('enabled', array_keys(Constant::ENABLED_OPTIONS))->default(Constant::ENABLED_OPTION)->nullable();
             $table->foreignId('created_by')->index()->nullable();
             $table->foreignId('updated_by')->index()->nullable();
             $table->foreignId('deleted_by')->index()->nullable();
