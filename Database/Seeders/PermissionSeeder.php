@@ -1,13 +1,12 @@
 <?php
 
-namespace Modules\Admin\Database\Seeders\Rbac;
+namespace Modules\Rbac\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Route;
-use Modules\Admin\Models\Rbac\Permission;
-use Modules\Admin\Supports\Helper;
-use Modules\Admin\Supports\Utility;
+use Modules\Core\Supports\Utility;
+use Modules\Rbac\Models\Permission;
 
 class PermissionSeeder extends Seeder
 {

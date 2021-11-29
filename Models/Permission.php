@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Admin\Models\Rbac;
+namespace Modules\Rbac\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Kyslik\ColumnSortable\Sortable;
-use Modules\Admin\Models\User;
+use Modules\Rbac\Models\User;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Models\Permission as SpatiePermission;

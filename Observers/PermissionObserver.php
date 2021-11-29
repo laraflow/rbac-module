@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Admin\Observers\Rbac;
+namespace Modules\Rbac\Observers;
 
 
-use Modules\Admin\Models\Rbac\Permission;
-use Modules\Admin\Notifications\Rbac\Permission\PermissionCreatedNotification;
-use Modules\Admin\Notifications\Rbac\Permission\PermissionDeletedNotification;
-use Modules\Admin\Services\Rbac\UserService;
+use Modules\Rbac\Models\Permission;
+use Modules\Rbac\Notifications\Permission\PermissionCreatedNotification;
+use Modules\Rbac\Notifications\Permission\PermissionDeletedNotification;
+use Modules\Rbac\Services\UserService;
 
 class PermissionObserver
 {

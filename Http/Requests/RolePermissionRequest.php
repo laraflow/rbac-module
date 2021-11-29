@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Admin\Http\Requests\Rbac;
+namespace Modules\Rbac\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class RolePermissionRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }

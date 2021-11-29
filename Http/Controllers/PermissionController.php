@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Admin\Http\Controllers\Rbac;
+namespace Modules\Rbac\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Exception;
@@ -9,10 +9,10 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Modules\Admin\Http\Requests\Rbac\PermissionRequest;
-use Modules\Admin\Services\Auth\AuthenticatedSessionService;
-use Modules\Admin\Services\Rbac\PermissionService;
-use Modules\Admin\Supports\Utility;
+use Modules\Auth\Services\AuthenticatedSessionService;
+use Modules\Core\Supports\Utility;
+use Modules\Rbac\Http\Requests\PermissionRequest;
+use Modules\Rbac\Services\PermissionService;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class PermissionController extends Controller

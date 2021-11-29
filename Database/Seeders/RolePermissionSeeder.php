@@ -1,14 +1,23 @@
 <?php
 
-namespace Modules\Admin\Database\Seeders\Rbac;
+namespace Modules\Rbac\Database\Seeders;
 
+use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
-use Modules\Admin\Models\Rbac\Permission;
-use Modules\Admin\Models\Rbac\Role;
+use Modules\Rbac\Models\Permission;
+use Modules\Rbac\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
 
 class RolePermissionSeeder extends Seeder
 {
+    public $command = null;
+
+    public function __construct()
+    {
+        $this->command = new Command();
+    }
+
     /**
      * Run the database seeds.
      *
@@ -28,6 +37,13 @@ class RolePermissionSeeder extends Seeder
             } catch (\PDOException  $exception) {
                 throw new \PDOException($exception->getMessage());
             }
+        }
+
+        //reset Spatie Permission cache
+        if (app(PermissionRegistrar::class)->forgetCachedPermissions()) {
+            $this->command->info('Permission cache reset' . PHP_EOL);
+        } else {
+            $this->command->error('Permission cache reset failed' . PHP_EOL);
         }
     }
 }

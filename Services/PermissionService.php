@@ -1,16 +1,16 @@
 <?php
 
-namespace Modules\Admin\Services\Rbac;
+namespace Modules\Rbac\Services;
 
 
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Modules\Admin\Exports\Rbac\PermissionXLSImport;
-use Modules\Admin\Models\Rbac\Permission;
-use Modules\Admin\Repositories\Eloquent\Rbac\PermissionRepository;
-use Modules\Admin\Services\Auth\AuthenticatedSessionService;
-use Modules\Admin\Supports\Constant;
+use Modules\Rbac\Exports\PermissionExport;
+use Modules\Rbac\Models\Permission;
+use Modules\Rbac\Repositories\Eloquent\PermissionRepository;
+use Modules\Rbac\Services\Auth\AuthenticatedSessionService;
+use Modules\Rbac\Supports\Constant;
 use Throwable;
 
 
@@ -188,11 +188,11 @@ class PermissionService
      * Export Object for Export Download
      *
      * @param array $filters
-     * @return PermissionXLSImport
+     * @return PermissionExport
      * @throws Exception
      */
-    public function exportPermission(array $filters = []): PermissionXLSImport
+    public function exportPermission(array $filters = []): PermissionExport
     {
-        return (new PermissionXLSImport($this->permissionRepository->getAllPermissionWith($filters)));
+        return (new PermissionExport($this->permissionRepository->getAllPermissionWith($filters)));
     }
 }

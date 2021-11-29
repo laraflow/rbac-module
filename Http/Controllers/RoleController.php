@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Admin\Http\Controllers\Rbac;
+namespace Modules\Rbac\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Exception;
@@ -11,13 +11,13 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use Modules\Admin\Http\Requests\Rbac\RolePermissionRequest;
-use Modules\Admin\Http\Requests\Rbac\RoleRequest;
-use Modules\Admin\Services\Auth\AuthenticatedSessionService;
-use Modules\Admin\Services\Rbac\PermissionService;
-use Modules\Admin\Services\Rbac\RoleService;
-use Modules\Admin\Supports\Constant;
-use Modules\Admin\Supports\Utility;
+use Modules\Auth\Services\AuthenticatedSessionService;
+use Modules\Core\Supports\Utility;
+use Modules\Rbac\Http\Requests\RolePermissionRequest;
+use Modules\Rbac\Http\Requests\RoleRequest;
+use Modules\Rbac\Services\PermissionService;
+use Modules\Rbac\Services\RoleService;
+
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Admin\Notifications\Rbac\Permission;
+namespace Modules\Rbac\Notifications\Permission;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
-use Modules\Admin\Models\User;
-use Modules\Admin\Models\Rbac\Permission;
+use Modules\Rbac\Models\User;
+use Modules\Rbac\Models\Permission;
 
 class PermissionCreatedNotification extends Notification
 {

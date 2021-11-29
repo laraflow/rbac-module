@@ -1,9 +1,8 @@
 <?php
 
-namespace Modules\Admin\Http\Requests\Rbac;
+namespace Modules\Rbac\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Modules\Admin\Supports\Constant;
 
 class PermissionRequest extends FormRequest
 {
@@ -42,7 +41,7 @@ class PermissionRequest extends FormRequest
      *
      * @return array
      */
-    public function attributes()
+    public function attributes(): array
     {
         return [
             'guard_name' => 'Guard',

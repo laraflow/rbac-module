@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Modules\Admin\Supports\Constant;
-use Modules\Admin\Supports\DefaultValue;
+use Modules\Rbac\Supports\Constant;
+use Modules\Rbac\Supports\DefaultValue;
 
 class CreatePermissionTables extends Migration
 {

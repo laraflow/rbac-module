@@ -1,17 +1,17 @@
 <?php
 
 
-namespace Modules\Admin\Repositories\Eloquent\Rbac;
+namespace Modules\Rbac\Repositories\Eloquent;
 
 
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Modules\Admin\Models\Rbac\Permission;
-use Modules\Admin\Repositories\EloquentRepository;
-use Modules\Admin\Services\Auth\AuthenticatedSessionService;
-use Modules\Admin\Supports\DefaultValue;
+use Modules\Rbac\Models\Permission;
+use Modules\Rbac\Repositories\EloquentRepository;
+use Modules\Rbac\Services\Auth\AuthenticatedSessionService;
+use Modules\Rbac\Supports\DefaultValue;
 
 class PermissionRepository extends EloquentRepository
 {

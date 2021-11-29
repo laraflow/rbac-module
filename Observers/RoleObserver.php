@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Admin\Observers\Rbac;
+namespace Modules\Rbac\Observers;
 
 
-use Modules\Admin\Models\Rbac\Role;
-use Modules\Admin\Notifications\Rbac\Role\RoleCreatedNotification;
-use Modules\Admin\Notifications\Rbac\Role\RoleDeletedNotification;
-use Modules\Admin\Services\Rbac\UserService;
+use Modules\Rbac\Models\Role;
+use Modules\Rbac\Notifications\Role\RoleCreatedNotification;
+use Modules\Rbac\Notifications\Role\RoleDeletedNotification;
+use Modules\Rbac\Services\UserService;
 
 class RoleObserver
 {

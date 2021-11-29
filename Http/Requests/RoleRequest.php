@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Admin\Http\Requests\Rbac;
+namespace Modules\Rbac\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

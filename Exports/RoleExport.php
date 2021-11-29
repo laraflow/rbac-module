@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Admin\Exports\Rbac;
+namespace Modules\Rbac\Exports;
 
 use Box\Spout\Common\Exception\InvalidArgumentException;
-use Modules\Admin\Models\Rbac\Role;
-use Modules\Admin\Exports\XLSImport;
+use Modules\Core\Abstracts\Export\FastExcelExport;
+use Modules\Rbac\Models\Role;
 
-class RoleXLSImport extends XLSImport
+class RoleExport extends FastExcelExport
 {
     /**
      * @param null $data
