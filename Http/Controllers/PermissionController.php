@@ -151,7 +151,7 @@ class PermissionController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        if ($this->authenticatedSessionService->verifyUser($request)) {
+        if ($this->authenticatedSessionService->validate($request)) {
 
             $confirm = $this->permissionService->destroyPermission($id);
 
@@ -175,7 +175,7 @@ class PermissionController extends Controller
      */
     public function restore($id, Request $request)
     {
-        if ($this->authenticatedSessionService->verifyUser($request)) {
+        if ($this->authenticatedSessionService->validate($request)) {
 
             $confirm = $this->permissionService->restorePermission($id);
 

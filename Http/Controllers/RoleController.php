@@ -177,7 +177,7 @@ class RoleController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        if ($this->authenticatedSessionService->verifyUser($request)) {
+        if ($this->authenticatedSessionService->validate($request)) {
             $confirm = $this->roleService->destroyRole($id);
             if ($confirm['status'] == true) {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -199,7 +199,7 @@ class RoleController extends Controller
      */
     public function restore($id, Request $request)
     {
-        if ($this->authenticatedSessionService->verifyUser($request)) {
+        if ($this->authenticatedSessionService->validate($request)) {
             $confirm = $this->roleService->restoreRole($id);
             if ($confirm['status'] == true) {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
