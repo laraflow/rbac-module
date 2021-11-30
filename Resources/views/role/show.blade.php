@@ -99,12 +99,6 @@
                             </div>
                             <div class="tab-pane fade" id="pills-permission" role="tabpanel"
                                  aria-labelledby="pills-permission-tab">
-                                <div class="row border-bottom my-3 d-flex justify-content-between">
-                                    <div class="mb-0 h3 align-middle">
-                                        <i class="mdi mdi-account-details-outline"></i>
-                                        Permissions
-                                    </div>
-                                </div>
                                 <div class="row">
                                     @forelse($role->permissions as $permission)
                                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
