@@ -49,7 +49,7 @@ class PermissionController extends Controller
         $filters = $request->except('page');
         $permissions = $this->permissionService->permissionPaginate($filters);
 
-        return view('admin::rbac.permission.index', [
+        return view('rbac::permission.index', [
             'permissions' => $permissions
         ]);
     }
@@ -61,7 +61,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        return view('admin::rbac.permission.create');
+        return view('rbac::permission.create');
     }
 
     /**
@@ -76,7 +76,7 @@ class PermissionController extends Controller
         $confirm = $this->permissionService->storePermission($request->except('_token'));
         if ($confirm['status'] == true) {
             notify($confirm['message'], $confirm['level'], $confirm['title']);
-            return redirect()->route('admin.permissions.index');
+            return redirect()->route('rbac.permissions.index');
         }
 
         notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -93,7 +93,7 @@ class PermissionController extends Controller
     public function show($id)
     {
         if ($permission = $this->permissionService->getPermissionById($id)) {
-            return view('admin::rbac.permission.show', [
+            return view('rbac::permission.show', [
                 'permission' => $permission,
                 'timeline' => Utility::modelAudits($permission)
             ]);
@@ -112,7 +112,7 @@ class PermissionController extends Controller
     public function edit($id)
     {
         if ($permission = $this->permissionService->getPermissionById($id)) {
-            return view('admin::rbac.permission.edit', [
+            return view('rbac::permission.edit', [
                 'permission' => $permission
             ]);
         }
@@ -134,7 +134,7 @@ class PermissionController extends Controller
 
         if ($confirm['status'] == true) {
             notify($confirm['message'], $confirm['level'], $confirm['title']);
-            return redirect()->route('admin.permissions.index');
+            return redirect()->route('rbac.permissions.index');
         }
 
         notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -160,7 +160,7 @@ class PermissionController extends Controller
             } else {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
             }
-            return redirect()->route('admin.permissions.index');
+            return redirect()->route('rbac.permissions.index');
         }
         abort(403, 'Wrong user credentials');
     }
@@ -184,7 +184,7 @@ class PermissionController extends Controller
             } else {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
             }
-            return redirect()->route('admin.permissions.index');
+            return redirect()->route('rbac.permissions.index');
         }
         abort(403, 'Wrong user credentials');
     }
@@ -196,7 +196,7 @@ class PermissionController extends Controller
      */
     public function import()
     {
-        return view('admin::rbac.permission.import');
+        return view('rbac::permission.import');
     }
 
     /**
@@ -210,7 +210,7 @@ class PermissionController extends Controller
         $filters = $request->except('page');
         $permissions = $this->permissionService->getAllPermissions($filters);
 
-        return view('admin::rbac.permission.index', [
+        return view('rbac::permission.index', [
             'permissions' => $permissions
         ]);
     }

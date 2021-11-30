@@ -14,7 +14,9 @@
     ],
     "aliases": {},
     "files": [],
-    "requires": [],
+    "requires": [
+        "Core"
+    ],
     "minimumCoreVersion": "",
     "title": "Rbac",
     "version":"0.0.1",

@@ -1,5 +1,9 @@
 <?php
 
 return [
-    'name' => 'Rbac'
+    'name' => 'Rbac',
+    'guard' => [
+        'web' => 'WEB',
+        'api' => 'API'
+    ]
 ];

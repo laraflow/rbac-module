@@ -3,10 +3,10 @@
 namespace Modules\Rbac\Observers;
 
 
+use Modules\Core\Services\UserService;
 use Modules\Rbac\Models\Permission;
 use Modules\Rbac\Notifications\Permission\PermissionCreatedNotification;
 use Modules\Rbac\Notifications\Permission\PermissionDeletedNotification;
-use Modules\Rbac\Services\UserService;
 
 class PermissionObserver
 {

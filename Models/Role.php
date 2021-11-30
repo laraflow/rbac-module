@@ -82,7 +82,7 @@ class Role extends SpatieRole implements Auditable
      */
     public function getTotalPermissionsAttribute(): int
     {
-        return $this->permissions->count();
+        return $this->permissions->count() ?? 0;
     }
 
     /**
@@ -92,7 +92,7 @@ class Role extends SpatieRole implements Auditable
      */
     public function getTotalUsersAttribute(): int
     {
-        return $this->users->count();
+        return $this->users->count() ?? 0;
     }
 
 }

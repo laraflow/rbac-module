@@ -65,7 +65,7 @@ class RoleController extends Controller
         $filters = $request->except('_token');
         $roles = $this->roleService->rolePaginate($filters);
 
-        return view('admin::rbac.role.index', [
+        return view('rbac::role.index', [
             'roles' => $roles
         ]);
     }
@@ -78,7 +78,7 @@ class RoleController extends Controller
     public function create()
     {
 
-        return view('admin::rbac.role.create');
+        return view('rbac::role.create');
     }
 
     /**
@@ -94,7 +94,7 @@ class RoleController extends Controller
 
         if ($confirm['status'] == true) {
             notify($confirm['message'], $confirm['level'], $confirm['title']);
-            return redirect()->route('admin.roles.index');
+            return redirect()->route('rbac.roles.index');
         }
 
         notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -118,7 +118,7 @@ class RoleController extends Controller
 
             $availablePermissionIds = $role->permissions()->pluck('id')->toArray();
 
-            return view('admin::rbac.role.show', [
+            return view('rbac::role.show', [
                 'role' => $role,
                 'permissions' => $permissions,
                 'availablePermissionIds' => $availablePermissionIds,
@@ -140,7 +140,7 @@ class RoleController extends Controller
     {
         if ($role = $this->roleService->getRoleById($id)) {
 
-            return view('admin::rbac.role.edit', ['role' => $role]);
+            return view('rbac::role.edit', ['role' => $role]);
         }
 
         abort(404);
@@ -160,7 +160,7 @@ class RoleController extends Controller
 
         if ($confirm['status'] == true) {
             notify($confirm['message'], $confirm['level'], $confirm['title']);
-            return redirect()->route('admin.roles.index');
+            return redirect()->route('rbac.roles.index');
         }
 
         notify($confirm['message'], $confirm['level'], $confirm['title']);
@@ -184,7 +184,7 @@ class RoleController extends Controller
             } else {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
             }
-            return redirect()->route('admin.roles.index');
+            return redirect()->route('rbac.roles.index');
         }
         abort(403, 'Wrong user credentials');
     }
@@ -206,7 +206,7 @@ class RoleController extends Controller
             } else {
                 notify($confirm['message'], $confirm['level'], $confirm['title']);
             }
-            return redirect()->route('admin.roles.index');
+            return redirect()->route('rbac.roles.index');
         }
         abort(403, 'Wrong user credentials');
     }
@@ -220,7 +220,7 @@ class RoleController extends Controller
      */
     public function import()
     {
-        return view('admin::rbac.permission.import');
+        return view('rbac::permission.import');
     }
 
     /**
@@ -234,7 +234,7 @@ class RoleController extends Controller
         $filters = $request->except('page');
         $permissions = $this->permissionService->getAllPermissions($filters);
 
-        return view('admin::rbac.permission.index', [
+        return view('rbac::permission.index', [
             'permissions' => $permissions
         ]);
     }

@@ -8,10 +8,9 @@ use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Modules\Auth\Services\AuthenticatedSessionService;
+use Modules\Core\Abstracts\Repository\EloquentRepository;
 use Modules\Rbac\Models\Permission;
-use Modules\Rbac\Repositories\EloquentRepository;
-use Modules\Rbac\Services\Auth\AuthenticatedSessionService;
-use Modules\Rbac\Supports\DefaultValue;
 
 class PermissionRepository extends EloquentRepository
 {

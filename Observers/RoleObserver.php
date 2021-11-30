@@ -3,10 +3,10 @@
 namespace Modules\Rbac\Observers;
 
 
+use Modules\Core\Services\UserService;
 use Modules\Rbac\Models\Role;
 use Modules\Rbac\Notifications\Role\RoleCreatedNotification;
 use Modules\Rbac\Notifications\Role\RoleDeletedNotification;
-use Modules\Rbac\Services\UserService;
 
 class RoleObserver
 {
