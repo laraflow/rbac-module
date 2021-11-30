@@ -18,11 +18,7 @@
 
 @endpush
 
-@push('inline-style')
-
-@endpush
-
-@push('head-script')
+@push('page-style')
 
 @endpush
 
