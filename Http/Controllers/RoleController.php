@@ -17,7 +17,6 @@ use Modules\Rbac\Http\Requests\RolePermissionRequest;
 use Modules\Rbac\Http\Requests\RoleRequest;
 use Modules\Rbac\Services\PermissionService;
 use Modules\Rbac\Services\RoleService;
-
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
 
@@ -211,8 +210,6 @@ class RoleController extends Controller
         abort(403, 'Wrong user credentials');
     }
 
-
-
     /**
      * Return an Import view page
      *
@@ -333,5 +330,54 @@ class RoleController extends Controller
         }
 
         abort(403);
+    }
+
+    /**
+     * @param $id
+     * @param RolePermissionRequest $request
+     * @return JsonResponse|void
+     * @throws Exception
+     */
+    public function user($id, RolePermissionRequest $request)
+    {
+        if ($request->ajax()) {
+
+            $jsonResponse = ['message' => null, 'errors' => []];
+
+            if ($role = $this->roleService->getRoleById($id)) {
+                $roles = $request->get('permissions', []);
+                $confirm = $this->roleService->syncPermission($id, $roles);
+
+                //formatted response is collected from service
+                return response()->json(array_merge($jsonResponse, $confirm));
+
+            } else {
+                throw ValidationException::withMessages([
+                    'role' => 'Invalid Role Id Provided'
+                ]);
+            }
+        }
+
+        abort(403);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function ajax(Request $request): JsonResponse
+    {
+        $filters = $request->except('_token');
+
+        if ($filters['paginate'] === true):
+            $roles = $this->roleService->rolePaginate($filters, ['permissions']);
+        else :
+            $roles = $this->roleService->getAllRoles($filters, ['permissions']);
+        endif;
+
+        return response()->json($roles, 200);
     }
 }

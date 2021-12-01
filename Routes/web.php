@@ -36,5 +36,6 @@ Route::prefix('rbac')->name('rbac.')->group(function() {
         Route::get('import', [RoleController::class, 'import'])->name('import');
         Route::post('import', [RoleController::class, 'importBulk']);
         Route::post('print', [RoleController::class, 'print'])->name('print');
+        Route::get('ajax', [RoleController::class, 'ajax'])->name('ajax')->middleware('ajax');
     });
 });
